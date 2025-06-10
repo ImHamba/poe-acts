@@ -52,6 +52,11 @@
     "web-vitals": "^4.2.4"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "*"
-  }
+    "@rollup/rollup-linux-x64-gnu": "4.40.1"
+  },
+  "overrides": {
+     "vite": {
+       "rollup": "npm:@rollup/wasm-node"
+     }
+   }
 }
