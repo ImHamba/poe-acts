@@ -14,7 +14,7 @@ export const Route = createFileRoute('/act5/')({
         <ChecklistItem>Templar courts</ChecklistItem>
         <ChecklistItem>Chamber of innocence - kill innocence</ChecklistItem>
         <ChecklistItem>The ossuary - get sign of purity</ChecklistItem>
-        <ChecklistItem>Town - regex</ChecklistItem>
+        <ChecklistItem>Town - regex -\w-.-|(-\w){4}|(-\w){5}|nne|rint</ChecklistItem>
         <ChecklistItem>
           Teleport to ruined square - drop portal in main western square
         </ChecklistItem>

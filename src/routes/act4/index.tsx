@@ -33,7 +33,7 @@ export const Route = createFileRoute('/act4/')({
           Town - regex
           <Gem type="blue">unleash</Gem>
         </ChecklistItem>
-        <ChecklistItem>The ascent</ChecklistItem>
+        <ChecklistItem>The ascent - to act 5</ChecklistItem>
       </ChecklistContainer>
     </ActContainer>
   ),

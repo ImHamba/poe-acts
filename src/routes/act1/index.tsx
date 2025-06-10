@@ -8,6 +8,7 @@ export const Route = createFileRoute('/act1/')({
   component: () => (
     <ActContainer act={1}>
       <ChecklistContainer>
+        <ChecklistItem>Kill hillock</ChecklistItem>
         <ChecklistItem>
           <div>Town - regex b-b-r|b-r-b|r-b-b|nne|rint</div>
           <Gem type="blue">freezing pulse</Gem>
@@ -26,7 +27,7 @@ export const Route = createFileRoute('/act1/')({
           <Gem type="red">shield charge</Gem>
         </ChecklistItem>
         <ChecklistItem>
-          Submerged passage - drop portal near dweller
+          Submerged passage - drop portal near dweller entrance
         </ChecklistItem>
         <ChecklistItem>Go to lower prison WP</ChecklistItem>
         <ChecklistItem>
@@ -34,7 +35,7 @@ export const Route = createFileRoute('/act1/')({
         </ChecklistItem>
         <ChecklistItem>Town - regex</ChecklistItem>
         <ChecklistItem>Go to lower prison - trial</ChecklistItem>
-        <ChecklistItem>Brutus - logout/login</ChecklistItem>
+        <ChecklistItem>Kill brutus - logout/login</ChecklistItem>
         <ChecklistItem>
           <div>Town - regex</div>
           <Gem type="blue">flame dash</Gem>
@@ -46,7 +47,7 @@ export const Route = createFileRoute('/act1/')({
         </ChecklistItem>
         <ChecklistItem>Go to prisoners gate</ChecklistItem>
         <ChecklistItem>Ship graveyard cave - kill fairgraves</ChecklistItem>
-        <ChecklistItem>Merveil</ChecklistItem>
+        <ChecklistItem>Kill merveil</ChecklistItem>
       </ChecklistContainer>
     </ActContainer>
   ),
