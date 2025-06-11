@@ -12,11 +12,15 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as Act9IndexImport } from './routes/act9/index'
+import { Route as Act8IndexImport } from './routes/act8/index'
+import { Route as Act7IndexImport } from './routes/act7/index'
 import { Route as Act6IndexImport } from './routes/act6/index'
 import { Route as Act5IndexImport } from './routes/act5/index'
 import { Route as Act4IndexImport } from './routes/act4/index'
 import { Route as Act3IndexImport } from './routes/act3/index'
 import { Route as Act2IndexImport } from './routes/act2/index'
+import { Route as Act10IndexImport } from './routes/act10/index'
 import { Route as Act1IndexImport } from './routes/act1/index'
 
 // Create/Update Routes
@@ -24,6 +28,24 @@ import { Route as Act1IndexImport } from './routes/act1/index'
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Act9IndexRoute = Act9IndexImport.update({
+  id: '/act9/',
+  path: '/act9/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Act8IndexRoute = Act8IndexImport.update({
+  id: '/act8/',
+  path: '/act8/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Act7IndexRoute = Act7IndexImport.update({
+  id: '/act7/',
+  path: '/act7/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -57,6 +79,12 @@ const Act2IndexRoute = Act2IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const Act10IndexRoute = Act10IndexImport.update({
+  id: '/act10/',
+  path: '/act10/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const Act1IndexRoute = Act1IndexImport.update({
   id: '/act1/',
   path: '/act1/',
@@ -79,6 +107,13 @@ declare module '@tanstack/react-router' {
       path: '/act1'
       fullPath: '/act1'
       preLoaderRoute: typeof Act1IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/act10/': {
+      id: '/act10/'
+      path: '/act10'
+      fullPath: '/act10'
+      preLoaderRoute: typeof Act10IndexImport
       parentRoute: typeof rootRoute
     }
     '/act2/': {
@@ -116,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Act6IndexImport
       parentRoute: typeof rootRoute
     }
+    '/act7/': {
+      id: '/act7/'
+      path: '/act7'
+      fullPath: '/act7'
+      preLoaderRoute: typeof Act7IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/act8/': {
+      id: '/act8/'
+      path: '/act8'
+      fullPath: '/act8'
+      preLoaderRoute: typeof Act8IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/act9/': {
+      id: '/act9/'
+      path: '/act9'
+      fullPath: '/act9'
+      preLoaderRoute: typeof Act9IndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -124,69 +180,115 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/act1': typeof Act1IndexRoute
+  '/act10': typeof Act10IndexRoute
   '/act2': typeof Act2IndexRoute
   '/act3': typeof Act3IndexRoute
   '/act4': typeof Act4IndexRoute
   '/act5': typeof Act5IndexRoute
   '/act6': typeof Act6IndexRoute
+  '/act7': typeof Act7IndexRoute
+  '/act8': typeof Act8IndexRoute
+  '/act9': typeof Act9IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/act1': typeof Act1IndexRoute
+  '/act10': typeof Act10IndexRoute
   '/act2': typeof Act2IndexRoute
   '/act3': typeof Act3IndexRoute
   '/act4': typeof Act4IndexRoute
   '/act5': typeof Act5IndexRoute
   '/act6': typeof Act6IndexRoute
+  '/act7': typeof Act7IndexRoute
+  '/act8': typeof Act8IndexRoute
+  '/act9': typeof Act9IndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/act1/': typeof Act1IndexRoute
+  '/act10/': typeof Act10IndexRoute
   '/act2/': typeof Act2IndexRoute
   '/act3/': typeof Act3IndexRoute
   '/act4/': typeof Act4IndexRoute
   '/act5/': typeof Act5IndexRoute
   '/act6/': typeof Act6IndexRoute
+  '/act7/': typeof Act7IndexRoute
+  '/act8/': typeof Act8IndexRoute
+  '/act9/': typeof Act9IndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/act1' | '/act2' | '/act3' | '/act4' | '/act5' | '/act6'
+  fullPaths:
+    | '/'
+    | '/act1'
+    | '/act10'
+    | '/act2'
+    | '/act3'
+    | '/act4'
+    | '/act5'
+    | '/act6'
+    | '/act7'
+    | '/act8'
+    | '/act9'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/act1' | '/act2' | '/act3' | '/act4' | '/act5' | '/act6'
+  to:
+    | '/'
+    | '/act1'
+    | '/act10'
+    | '/act2'
+    | '/act3'
+    | '/act4'
+    | '/act5'
+    | '/act6'
+    | '/act7'
+    | '/act8'
+    | '/act9'
   id:
     | '__root__'
     | '/'
     | '/act1/'
+    | '/act10/'
     | '/act2/'
     | '/act3/'
     | '/act4/'
     | '/act5/'
     | '/act6/'
+    | '/act7/'
+    | '/act8/'
+    | '/act9/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Act1IndexRoute: typeof Act1IndexRoute
+  Act10IndexRoute: typeof Act10IndexRoute
   Act2IndexRoute: typeof Act2IndexRoute
   Act3IndexRoute: typeof Act3IndexRoute
   Act4IndexRoute: typeof Act4IndexRoute
   Act5IndexRoute: typeof Act5IndexRoute
   Act6IndexRoute: typeof Act6IndexRoute
+  Act7IndexRoute: typeof Act7IndexRoute
+  Act8IndexRoute: typeof Act8IndexRoute
+  Act9IndexRoute: typeof Act9IndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Act1IndexRoute: Act1IndexRoute,
+  Act10IndexRoute: Act10IndexRoute,
   Act2IndexRoute: Act2IndexRoute,
   Act3IndexRoute: Act3IndexRoute,
   Act4IndexRoute: Act4IndexRoute,
   Act5IndexRoute: Act5IndexRoute,
   Act6IndexRoute: Act6IndexRoute,
+  Act7IndexRoute: Act7IndexRoute,
+  Act8IndexRoute: Act8IndexRoute,
+  Act9IndexRoute: Act9IndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -201,11 +303,15 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/act1/",
+        "/act10/",
         "/act2/",
         "/act3/",
         "/act4/",
         "/act5/",
-        "/act6/"
+        "/act6/",
+        "/act7/",
+        "/act8/",
+        "/act9/"
       ]
     },
     "/": {
@@ -213,6 +319,9 @@ export const routeTree = rootRoute
     },
     "/act1/": {
       "filePath": "act1/index.tsx"
+    },
+    "/act10/": {
+      "filePath": "act10/index.tsx"
     },
     "/act2/": {
       "filePath": "act2/index.tsx"
@@ -228,6 +337,15 @@ export const routeTree = rootRoute
     },
     "/act6/": {
       "filePath": "act6/index.tsx"
+    },
+    "/act7/": {
+      "filePath": "act7/index.tsx"
+    },
+    "/act8/": {
+      "filePath": "act8/index.tsx"
+    },
+    "/act9/": {
+      "filePath": "act9/index.tsx"
     }
   }
 }

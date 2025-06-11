@@ -10,7 +10,7 @@ export const Route = createFileRoute('/act2/')({
       <ChecklistContainer>
         <ChecklistItem>Town - go east</ChecklistItem>
         <ChecklistItem>
-          (Optional) Old fields - do The Den if you find it
+          (Optional quicksilver reward) Old fields - do the den if you find it
         </ChecklistItem>
         <ChecklistItem>Crossroads WP - go north</ChecklistItem>
         <ChecklistItem>Chamber of sins level 2 - trial</ChecklistItem>

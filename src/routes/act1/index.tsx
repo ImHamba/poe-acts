@@ -1,24 +1,27 @@
 import ActContainer from '@/lib/reuseable/ActContainer'
 import ChecklistContainer from '@/lib/reuseable/ChecklistContainer'
 import ChecklistItem from '@/lib/reuseable/ChecklistItem'
+import ChecklistItemGroup from '@/lib/reuseable/ChecklistItemGroup'
 import Gem from '@/lib/reuseable/Gem'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/act1/')({
   component: () => (
-    <ActContainer act={1}>
+    <ActContainer act={1} regex="b-b-r|b-r-b|r-b-b|nne|rint">
       <ChecklistContainer>
         <ChecklistItem>Kill hillock</ChecklistItem>
         <ChecklistItem>
-          <div>Town - regex b-b-r|b-r-b|r-b-b|nne|rint</div>
+          <div>Town</div>
           <Gem type="blue">freezing pulse</Gem>
         </ChecklistItem>
-        <ChecklistItem>Go to submerged passage WP</ChecklistItem>
+        <ChecklistItemGroup
+          items={[
+            'Go to submerged passage WP',
+            'Teleport to The Coast - kill Hailrake in Tidal Island, logout/login',
+          ]}
+        />
         <ChecklistItem>
-          Teleport to The Coast - kill Hailrake in Tidal Island, logout/login
-        </ChecklistItem>
-        <ChecklistItem>
-          <div>Town - regex</div>
+          <div>Town</div>
           <ChecklistItem>quicksilver</ChecklistItem>
           <Gem type="blue">SRS</Gem>
           <Gem type="blue">frostblink</Gem>
@@ -26,18 +29,18 @@ export const Route = createFileRoute('/act1/')({
           <Gem type="red">holy flame totem</Gem>
           <Gem type="red">shield charge</Gem>
         </ChecklistItem>
+        <ChecklistItemGroup
+          items={[
+            'Submerged passage - drop portal near dweller entrance',
+            'Go to lower prison WP',
+            'Teleport town/portal - kill dweller, logout/login',
+            'Town',
+            'Go to lower prison - trial',
+            'Kill brutus - logout/login',
+          ]}
+        />
         <ChecklistItem>
-          Submerged passage - drop portal near dweller entrance
-        </ChecklistItem>
-        <ChecklistItem>Go to lower prison WP</ChecklistItem>
-        <ChecklistItem>
-          Teleport town/portal - kill dweller, logout/login
-        </ChecklistItem>
-        <ChecklistItem>Town - regex</ChecklistItem>
-        <ChecklistItem>Go to lower prison - trial</ChecklistItem>
-        <ChecklistItem>Kill brutus - logout/login</ChecklistItem>
-        <ChecklistItem>
-          <div>Town - regex</div>
+          <div>Town</div>
           <Gem type="blue">flame dash</Gem>
           <Gem type="blue">minion damage</Gem>
           <Gem type="red">melee splash</Gem>
@@ -45,9 +48,13 @@ export const Route = createFileRoute('/act1/')({
           <Gem type="blue">raise zombie</Gem>
           <Gem type="blue">flesh offering</Gem>
         </ChecklistItem>
-        <ChecklistItem>Go to prisoners gate</ChecklistItem>
-        <ChecklistItem>Ship graveyard cave - kill fairgraves</ChecklistItem>
-        <ChecklistItem>Kill merveil</ChecklistItem>
+        <ChecklistItemGroup
+          items={[
+            'Ship graveyard cave - kill fairgraves',
+            'Go to prisoners gate',
+            'Kill merveil',
+          ]}
+        />
       </ChecklistContainer>
     </ActContainer>
   ),
